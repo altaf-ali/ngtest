@@ -10,22 +10,21 @@ env:
   global:
   - GIT_AUTHOR_NAME: Altaf Ali
   - GIT_AUTHOR_EMAIL: altaf@fastmail.com
-  - secure: I3DSdTEDIwrQKj3It6yKOSd7mO6LQjbhH39DBwxVruOks4Gogm+j6crmXJpU5oLM3xcbz4yuXsy3gLxiC+ynTLLAfxlxiO1+yNehdB4KYayGQWu4C9MopGB8Vk0JNO5IBqXEDaJ8JS/yMQEG6tlT3GCq0iM+9qHKudqHk4Hrk2hwVJSPlzq8RdSQ/roSuTbe4NeAeZ0Xr3VR4exK1zr2Jknv9p6yjpTUzfD8XjCsm6PBqlHbHDjrIk6jtRGO14nu2ly+Mrr+zKYlNIftIfkSFe9tG2VIHnohFvJrhk8JUMfFF13PDeemgYe6SCx+1gw4IF5QwpcXulygojsT13RhBgmCBTBGsvaHcsHG6hwv1tqvTZ7r2OVoy+UtrWzTAHzZPMFk1smdoavDp+e7h/+0cwm7ywOuOU9kNvi8GPoxeSbbFC9aZVWFGCbEESj1/4Fjj67XWL3IeLKRbwxClXuNqgAHRc42E9tCDE+lcHbsJNIcXDa8s3kzZC6tfzs4K+Ra9dyM4eMnxf+y06BZvxPBkeRdlJgthnp8rG3YAhlsH4NKfe3Kcg7qIdyaS9LHXftW2NGzRWoQNsj3l3IdYeYVBOtC1hvsn+GM3+WACmZohlH70lueAoTvn7b2MRzaI7L6uzGExyHb6zSiU4LlJsDe4kPtZIW9ri8+tWx76Fu5qjc=
+  - secure: faI6QwNm/kQflDnUNubRX15HD6MzN9zutWjaAOg2dYfJS+y9I2Maq/5vOEs2pcv5ROHVsTb+SsHCePABPmdltdxF6W1nh2eeIeGDzt6IBSGycDAYrsDmn68lIWJJrNyTL3UXKEmVIy4zwdAQpBEvrPUx9L9oIPa1tKStKK0mot2emctqTMyG0hIXfmfBEa0yG4TE7bOvSk+KGU2t5ylkJXDwgWwGHPxvcjB7Le1lQhLu0FWhvAbaAN+aTwclNZWmrkSuYuPFFft620i1Yq2p00IsBWpHenpeX7RQPV1Oirl1XDIeAYoe+8uWLED1ElL1EAtV4YBYNe6RjoPVLU2euVVfpHMYkE1gEqkItsPmGXGZ0/K77sNwWeytBXlBCj0kxJIcRqTLrRrHVwH/zMMSTGwO5mBMZDm6yuHL2ixXSMMyRMbQJyhs7mg65Yun6acdEEzvGAEBTbKI8yXaH8vkGoKrts001j7P4IbyzS1bijRxWcp1nNZyyK+9qLW7uSKGJYfnSBVXq97SUjgUfIaabcjmJzErY+lnE55lfctD9dvKI3r5uP/v6AqEvJF3O/yY/b2C3MuGF3nx9akcP8ofT07QNsuJXtNW8CPuf/Ubn+b0O0EABPRvEmp8v6FQTLHunrVaL950Aohx+xTkHH5X59RqbQaPZBgX7Y1SLPwG580=
 
 notifications:
   email: false
 
 before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 
 before_script:
-  - npm install -g angular-cli-ghpages
+- npm install -g angular-cli-ghpages
 
 script:
-  - ng build --prod --base-href /
-   
-after_success:
-  - angular-cli-ghpages --repo=https://GITHUB_PAT@github.com/altaf-ali/ngtest.git
+- ng build --prod --base-href /
 
+after_success:
+- angular-cli-ghpages --repo=https://GH_TOKEN@github.com/altaf-ali/ngtest.git
