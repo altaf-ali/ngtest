@@ -12,10 +12,17 @@ env:
   - GIT_AUTHOR_EMAIL: altaf@fastmail.com
   - secure: I3DSdTEDIwrQKj3It6yKOSd7mO6LQjbhH39DBwxVruOks4Gogm+j6crmXJpU5oLM3xcbz4yuXsy3gLxiC+ynTLLAfxlxiO1+yNehdB4KYayGQWu4C9MopGB8Vk0JNO5IBqXEDaJ8JS/yMQEG6tlT3GCq0iM+9qHKudqHk4Hrk2hwVJSPlzq8RdSQ/roSuTbe4NeAeZ0Xr3VR4exK1zr2Jknv9p6yjpTUzfD8XjCsm6PBqlHbHDjrIk6jtRGO14nu2ly+Mrr+zKYlNIftIfkSFe9tG2VIHnohFvJrhk8JUMfFF13PDeemgYe6SCx+1gw4IF5QwpcXulygojsT13RhBgmCBTBGsvaHcsHG6hwv1tqvTZ7r2OVoy+UtrWzTAHzZPMFk1smdoavDp+e7h/+0cwm7ywOuOU9kNvi8GPoxeSbbFC9aZVWFGCbEESj1/4Fjj67XWL3IeLKRbwxClXuNqgAHRc42E9tCDE+lcHbsJNIcXDa8s3kzZC6tfzs4K+Ra9dyM4eMnxf+y06BZvxPBkeRdlJgthnp8rG3YAhlsH4NKfe3Kcg7qIdyaS9LHXftW2NGzRWoQNsj3l3IdYeYVBOtC1hvsn+GM3+WACmZohlH70lueAoTvn7b2MRzaI7L6uzGExyHb6zSiU4LlJsDe4kPtZIW9ri8+tWx76Fu5qjc=
 
+notifications:
+  email: false
+  
 before_install:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
+before_script:
+  - npm install -g angular-cli-ghpages
+
 after_success:
   - angular-cli-ghpages --repo=https://GITHUB_PAT@github.com/altaf-ali/ngtest.git
+
