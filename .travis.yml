@@ -1,0 +1,13 @@
+language: node_js
+
+sudo: false
+dist: trusty
+
+node_js:
+- node
+
+env:
+  global:
+  - GIT_AUTHOR_NAME: Altaf Ali
+  - GIT_AUTHOR_EMAIL: altaf@fastmail.com
+
